@@ -14,6 +14,8 @@ class ProjectController extends Controller
         return response()->json($projects);
     }
 
+    
+
     public function show(Project $project)
     {
         //$project = Project::where('id', $project->id)->with(['category', 'technologies'])->get();
