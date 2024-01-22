@@ -21,4 +21,10 @@ class ProjectController extends Controller
         //$project = Project::where('id', $project->id)->with(['category', 'technologies'])->get();
         return response()->json($project->load(['category', 'technologies']));
     }
+
+    public function search(Request $request)
+    {
+        $projects = Project::where('title', 'like', '%' . $request->query('search') . '%')->get();
+        return response()->json($projects->load(['category', 'technologies']));
+    }
 }
