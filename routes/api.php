@@ -25,3 +25,4 @@ Route::get('/projects', [ProjectController::class, 'index']);
 //Route::get('/projects/search', [ProjectController::class, 'search']);
 Route::get('/projects/{project}', [ProjectController::class, 'show']);
 Route::get('search/projects', [ProjectController::class, 'search'])->name('search.projects');
+//Route::get('categories/projects', [ProjectController::class, 'searchByCategory']);
