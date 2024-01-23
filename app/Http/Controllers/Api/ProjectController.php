@@ -27,7 +27,6 @@ class ProjectController extends Controller
         $projects = Project::where('title', 'like', '%' . $request->query('search') . '%')->get();
         return response()->json($projects->load(['category', 'technologies']));
     }
-
     /*
     public function searchByCategory(Request $request)
     {
