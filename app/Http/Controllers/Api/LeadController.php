@@ -47,7 +47,7 @@ class LeadController extends Controller
         }
 
         $newLead = new Lead();
-        $newlead->fill($data);
+        $newLead->fill($data);
         $newLead->save();
 
         Mail::to('OY0Rw@example.com')->send(new NewContact($newLead));
