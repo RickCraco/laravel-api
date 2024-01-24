@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProjectController;
+use App\Http\Controllers\Api\LeadController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Route::get('/projects', [ProjectController::class, 'index']);
 Route::get('/projects/{project}', [ProjectController::class, 'show']);
 Route::get('search/projects', [ProjectController::class, 'search'])->name('search.projects');
 //Route::get('categories/projects', [ProjectController::class, 'searchByCategory']);
+
+Route::post('contacts', [LeadController::class, 'store']);
