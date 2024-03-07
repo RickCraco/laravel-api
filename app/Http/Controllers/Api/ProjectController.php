@@ -24,7 +24,7 @@ class ProjectController extends Controller
 
     public function search(Request $request)
     {
-        $projects = Project::where('title', 'like', '%' . $request->query('search') . '%')->get();
+        $projects = Project::where('title', 'like', '%' . $request->input('search') . '%')->get();
         return response()->json($projects->load(['category', 'technologies']));
     }
     /*
